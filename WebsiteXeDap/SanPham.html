@@ -164,7 +164,7 @@
 
 
     <!-- Page Header Start -->
-    <div class="container-fluid bg-gray-200 mb-5">
+    <!-- <div class="container-fluid bg-gray-200 mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
             <h1 class="font-weight-semi-bold text-uppercase mb-3">Shop Detail</h1>
             <div class="d-inline-flex">
@@ -173,7 +173,7 @@
                 <p class="m-0">Shop Detail</p>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Page Header End -->
 
 
@@ -186,36 +186,40 @@
                         <div class="product-slick-item">
                             <img class="product-thumbnail w-100 h-100" src="{{ sanpham.imagePath }}" alt="Image">
                         </div>
-                        <!-- <div ng-repeat="image in images" class="product-slick-item">
-                            <img class="w-100 h-100" src="{{ image.imagePath }}" alt="Image">
-                        </div> -->
+                        <div class="product-slick-item">
+                            <img class="w-100 h-100" src="{{ images[2].imagePath }}" alt="Image">
+                        </div>
+                        <div class="product-slick-item">
+                            <img class="w-100 h-100" src="{{ images[3].imagePath }}" alt="Image">
+                        </div>
+                        <div class="product-slick-item">
+                            <img class="w-100 h-100" src="{{ images[4].imagePath }}" alt="Image">
+                        </div>
                     </div>
 
                     <div class="product-navfor-slick-inner border">
                         <div class="row w-100" id="slick-slide-navfor">
-                            <div ng-repeat="image in images" class="col-lg-3 mw-100">
-                                <div class="product-slick-item">
-                                    <img class="w-100 h-100" src="{{ image.imagePath }}" alt="Image">
-                                </div>
-                            </div>
-
-                            <!-- <div class="col-lg-3 mw-100">
-                                <div class="product-slick-item">
-                                    <img class="w-100 h-100" src="img/titoni-83919-s-612-nam-1-600x600-removebg-preview.png" alt="Image">
-                                </div>
-                            </div>
-
                             <div class="col-lg-3 mw-100">
                                 <div class="product-slick-item">
-                                    <img class="w-100 h-100" src="img/titoni-818-s-656-nu-1-600x600.jpg" alt="Image">
+                                    <img class="w-100 h-100" src="{{ images[0].imagePath }}" alt="Image">
                                 </div>
                             </div>
-
                             <div class="col-lg-3 mw-100">
                                 <div class="product-slick-item">
-                                    <img class="w-100 h-100" src="img/frederique-constant-fc-318mpwn3b4-nu-300x300.jpg" alt="Image">
+                                    <img class="w-100 h-100" src="{{ images[2].imagePath }}" alt="Image">
                                 </div>
-                            </div> -->
+                            </div>
+                            <div class="col-lg-3 mw-100">
+                                <div class="product-slick-item">
+                                    <img class="w-100 h-100" src="{{ images[3].imagePath }}" alt="Image">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 mw-100">
+                                <div class="product-slick-item">
+                                    <img class="w-100 h-100" src="{{ images[4].imagePath }}" alt="Image">
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     
@@ -389,22 +393,22 @@
     <!-- Shop Detail End -->
 
 
-    <!-- Products Start -->
+    <!-- Related Products Start -->
     <div class="container-fluid py-5">
         <div class="text-center mb-4">
-            <h3 class="section-title px-5"><span class="px-2">Related products</span></h3>
+            <h3 class="section-title px-5"><span class="px-2">Sản phẩm tương tự</span></h3>
         </div>
         <div class="row px-xl-5">
             <div class="col">
                 <div class="owl-carousel related-carousel">
                     <div class="card product-item border-0">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="img/frederique-constant-fc-318mpwn3b4-nu-300x300.jpg" alt="">
+                            <img class="img-fluid w-100" src="{{ spsearch.data[0].imagePath }}" alt="">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">Titoni watch 40 mm 83919 S-612</h6>
+                            <h6 class="text-truncate mb-3">{{ spsearch.data[0].title }}</h6>
                             <div class="d-flex justify-content-center">
-                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                                <h6>{{ spsearch.data[0].price }}</h6>
                             </div>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
@@ -414,12 +418,12 @@
                     </div>
                     <div class="card product-item border-0">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="img/titoni-878-srg-657-nam-1-600x600.jpg" alt="">
+                            <img class="img-fluid w-100" src="{{ spsearch.data[1].imagePath }}" alt="">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">Titoni watch 40 mm 83919 S-612</h6>
+                            <h6 class="text-truncate mb-3">{{ spsearch.data[1].title }}</h6>
                             <div class="d-flex justify-content-center">
-                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                                <h6>{{ spsearch.data[1].price }}</h6>
                             </div>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
@@ -429,12 +433,12 @@
                     </div>
                     <div class="card product-item border-0">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="img/titoni-83919-s-612-nam-1-600x600-removebg-preview.png" alt="">
+                            <img class="img-fluid w-100" src="{{ spsearch.data[2].imagePath }}" alt="">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">Titoni watch 40 mm 83919 S-612</h6>
+                            <h6 class="text-truncate mb-3">{{ spsearch.data[2].title }}</h6>
                             <div class="d-flex justify-content-center">
-                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                                <h6>{{ spsearch.data[2].price }}</h6>
                             </div>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
@@ -444,12 +448,12 @@
                     </div>
                     <div class="card product-item border-0">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="img/titoni-818-s-656-nu-1-600x600.jpg" alt="">
+                            <img class="img-fluid w-100" src="{{ spsearch.data[3].imagePath }}" alt="">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">Titoni watch 40 mm 83919 S-612</h6>
+                            <h6 class="text-truncate mb-3">{{ spsearch.data[3].title }}</h6>
                             <div class="d-flex justify-content-center">
-                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                                <h6>{{ spsearch.data[3].price }}</h6>
                             </div>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
@@ -459,12 +463,12 @@
                     </div>
                     <div class="card product-item border-0">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="img/frederique-constant-fc-318mpwn3b4-nu-300x300.jpg" alt="">
+                            <img class="img-fluid w-100" src="{{ spsearch.data[4].imagePath }}" alt="">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">Titoni watch 40 mm 83919 S-612</h6>
+                            <h6 class="text-truncate mb-3">{{ spsearch.data[4].title }}</h6>
                             <div class="d-flex justify-content-center">
-                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                                <h6>{{ spsearch.data[4].price }}</h6>
                             </div>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">

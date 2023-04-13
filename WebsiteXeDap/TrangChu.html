@@ -236,42 +236,109 @@
             <h2 class="section-title px-5"><span class="px-2">BEST SELLER</span></h2>
         </div>
         <div class="row pb-3">
-            <div ng-repeat="product in listSanPhamMoi" class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4" data-index="{{ product.proID }}">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="product-thumbnail img-fluid w-100" src="{{product.imagePath}}" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="product-name text-truncate mb-3">{{ product.title }} </h6>
-                        <div class="d-flex justify-content-center">
-                            <h6 class="product-price">{{ product.price | number }}₫</h6>
-                            <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+            <div class="owl-carousel related-carousel">
+
+                    <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[0].proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{listSanPhamMoi[0].imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ listSanPhamMoi[0].title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ listSanPhamMoi[0].price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ listSanPhamMoi[0].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                         </div>
                     </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="SanPham.html?id={{ xedap.proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                    <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[1].proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{listSanPhamMoi[1].imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ listSanPhamMoi[1].title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ listSanPhamMoi[1].price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ listSanPhamMoi[1].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
                     </div>
-                </div>
+                    <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[2].proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{listSanPhamMoi[2].imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ listSanPhamMoi[2].title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ listSanPhamMoi[2].price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ listSanPhamMoi[2].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
+                    </div>
+                    <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[3].proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{listSanPhamMoi[3].imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ listSanPhamMoi[3].title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ listSanPhamMoi[3].price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ listSanPhamMoi[3].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
+                    </div>
+                    <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[4].proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{listSanPhamMoi[4].imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ listSanPhamMoi[4].title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ listSanPhamMoi[4].price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ listSanPhamMoi[4].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
+                    </div>
+                    <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[4].proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{listSanPhamMoi[5].imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ listSanPhamMoi[5].title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ listSanPhamMoi[5].price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ listSanPhamMoi[5].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
+                    </div>
             </div>
 
         </div>
     </div>
-    <!-- Products Start -->
-    <!-- <div class="container-fluid py-5">
-        <div class="text-center mb-4">
-            <h3 class="section-title px-5"><span class="px-2">BEST SELLER</span></h3>
-        </div>
-        <div class="row px-xl-5">
-            <div class="col">
-                <div class="owl-carousel related-carousel">
-                    
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Products End -->
-    <!-- Products End -->
+    <!-- Best Seller Products Start -->
 
     <!-- Newest Products Start -->
     <div class="container pt-5">
@@ -279,24 +346,105 @@
             <h2 class="section-title px-5"><span class="px-2">NEWEST PRODUCT</span></h2>
         </div>
         <div class="row pb-3">
-            <div ng-repeat="product in newproducts" class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4" data-index="1">
+            <div class="owl-carousel related-carousel">
+
+                <div class="card product-item border-0 mb-4" data-index="{{ newproducts[0].proID }}">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="product-thumbnail img-fluid w-100" src="{{product.imagePath}}" alt="">
+                        <img class="product-thumbnail img-fluid w-100" src="{{newproducts[0].imagePath}}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="product-name text-truncate mb-3">{{ product.title }} </h6>
+                        <h6 class="product-name text-truncate mb-3">{{ listSanPhamMoi[0].title }} </h6>
                         <div class="d-flex justify-content-center">
-                            <h6 class="product-price">{{ product.price | number }}₫</h6>
+                            <h6 class="product-price">{{ newproducts[0].price | number }}₫</h6>
                             <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="SanPham.html?id={{ xedap.proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="SanPham.html?id={{ newproducts[0].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
                         <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                     </div>
                 </div>
-            </div>
+                <div class="card product-item border-0 mb-4" data-index="{{ newproducts[1].proID }}">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="product-thumbnail img-fluid w-100" src="{{newproducts[1].imagePath}}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="product-name text-truncate mb-3">{{ newproducts[1].title }} </h6>
+                        <div class="d-flex justify-content-center">
+                            <h6 class="product-price">{{ newproducts[1].price | number }}₫</h6>
+                            <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="SanPham.html?id={{ newproducts[1].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                    </div>
+                </div>
+                <div class="card product-item border-0 mb-4" data-index="{{ newproducts[2].proID }}">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="product-thumbnail img-fluid w-100" src="{{newproducts[2].imagePath}}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="product-name text-truncate mb-3">{{ newproducts[2].title }} </h6>
+                        <div class="d-flex justify-content-center">
+                            <h6 class="product-price">{{ newproducts[2].price | number }}₫</h6>
+                            <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="SanPham.html?id={{ newproducts[2].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                    </div>
+                </div>
+                <div class="card product-item border-0 mb-4" data-index="{{ newproducts[3].proID }}">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="product-thumbnail img-fluid w-100" src="{{newproducts[3].imagePath}}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="product-name text-truncate mb-3">{{ newproducts[3].title }} </h6>
+                        <div class="d-flex justify-content-center">
+                            <h6 class="product-price">{{ newproducts[3].price | number }}₫</h6>
+                            <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="SanPham.html?id={{ newproducts[3].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                    </div>
+                </div>
+                <div class="card product-item border-0 mb-4" data-index="{{ newproducts[4].proID }}">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="product-thumbnail img-fluid w-100" src="{{newproducts[4].imagePath}}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="product-name text-truncate mb-3">{{ newproducts[4].title }} </h6>
+                        <div class="d-flex justify-content-center">
+                            <h6 class="product-price">{{ newproducts[4].price | number }}₫</h6>
+                            <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="SanPham.html?id={{ newproducts[4].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                    </div>
+                </div>
+                <div class="card product-item border-0 mb-4" data-index="{{ newproducts[4].proID }}">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="product-thumbnail img-fluid w-100" src="{{newproducts[5].imagePath}}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="product-name text-truncate mb-3">{{ newproducts[5].title }} </h6>
+                        <div class="d-flex justify-content-center">
+                            <h6 class="product-price">{{ newproducts[5].price | number }}₫</h6>
+                            <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="SanPham.html?id={{ newproducts[5].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                    </div>
+                </div>
+        </div>
 
         </div>
     </div>

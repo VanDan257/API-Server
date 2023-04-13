@@ -142,7 +142,7 @@
                                             </div>
                                             <ul style="display: none; background-color: #393939c5; left:30%" class="dropdown-menu">
                                                 <li ng-repeat="category in categories">
-                                                    <a class="nav-link nav-item" href="#">
+                                                    <a class="nav-link nav-item" href="DanhMucSanPham.html?id={{ category.cateID }}">
                                                         {{ category.cateName }}
                                                     </a>
                                                 </li>
@@ -191,8 +191,16 @@
                             <label class="custom-control-label" for="price-all">All Price</label>
                             <span class="badge border font-weight-normal">{{ spsearch.totalItems }}</span>
                         </div>
+                        <hr>
                         <form action="" method="get">
-                            <input type="text">
+                            <p>Tìm theo khoảng giá</p>
+                            <div class="row">
+                                <label class="col-md-2" for="fromPrice">Từ</label>
+                                <input class="col-md-3" style="padding: 0 4px;" type="text" ng-model="fromPrice" id="fromPrice">₫
+                                <label class="col-md-2" for="toPrice">Đến</label>
+                                <input class="col-md-3" style="padding: 0 4px;" type="text" ng-model="toPrice" id="toPrice">₫
+                            </div>
+                            <button ng-click="Search()" class="btn btn-block">Tìm kiếm</button>
                         </form>
                         <!-- <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="price-1">
@@ -211,7 +219,7 @@
                 <div class="row pb-3">
                     <div class="col-12 pb-1">
                         <div class="d-flex align-items-center justify-content-between mb-4">
-                            <form action="">
+                            <!-- <form action="">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Search by name">
                                     <div class="input-group-append">
@@ -220,7 +228,7 @@
                                         </span>
                                     </div>
                                 </div>
-                            </form>
+                            </form> -->
                             <div class="dropdown ml-4">
                                 <button class="btn border dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">

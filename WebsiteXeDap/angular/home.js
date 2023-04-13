@@ -133,7 +133,6 @@ app.controller("ListBike", function ($scope, $http, $window) {
         search.ToPrice = $scope.toPrice;
         // search.Title = vietnameseString;
         search.CateID = value
-        console.log(search);
         $http.post(current_url + '/api/Product/search', search).then(function (response) {
             $scope.spsearch = response.data;
             var pages = Math.ceil(response.data.totalItems/response.data.pageSize);

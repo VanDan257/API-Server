@@ -16,57 +16,6 @@
             }
         }
     }
-
-    // Customize 
-    $('.hero__categories').on('mouseenter', function(){
-        $('.hero__categories ul').slideToggle(400);
-    });
-    $('.hero__categories').on('mouseleave', function(){
-        $('.hero__categories ul').hide(400);
-    });
-
-    $(window).on('load', function () {
-        $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
-
-        /*------------------
-            Gallery filter
-        --------------------*/
-        $('.featured__controls li').on('click', function () {
-            $('.featured__controls li').removeClass('active');
-            $(this).addClass('active');
-        });
-        if ($('.featured__filter').length > 0) {
-            var containerEl = document.querySelector('.featured__filter');
-            var mixer = mixitup(containerEl);
-        }
-    });
-
-    // function addToCart(item) {
-    //     item.quantity = 1;
-    //     var list;
-    //     if (localStorage.getItem('cart') == null) {
-    //         list = [item];
-    //     } else {
-    //         list = JSON.parse(localStorage.getItem('cart')) || [];
-    //         let ok = true;
-    //         for (let x of list) {
-    //             if (x.proID == item.proID) {
-    //                 x.quantity += 1;
-    //                 ok = false;
-    //                 break;
-    //             }
-    //         }
-    //         if (ok) {
-    //             list.push(item);
-    //         }
-    //     }
-    //     localStorage.setItem('cart', JSON.stringify(list));
-    //     alert("Đã thêm giỏ hàng thành công!");
-    // }
-    // var listItem = JSON.parse(localStorage.getItem('cart'));
-    
-    // End customize
     
 
     function addDataCart() {
@@ -421,6 +370,33 @@
         focusOnSelect: true,
         asNavFor: ".product-slick-inner"
     })
+
+    
+    // Customize 
+    $('.hero__categories').on('mouseenter', function(){
+        $('.hero__categories ul').slideToggle(400);
+    });
+    $('.hero__categories').on('mouseleave', function(){
+        $('.hero__categories ul').hide(400);
+    });
+
+    $(window).on('load', function () {
+        $(".loader").fadeOut();
+        $("#preloder").delay(200).fadeOut("slow");
+
+        /*------------------
+            Gallery filter
+        --------------------*/
+        $('.featured__controls li').on('click', function () {
+            $('.featured__controls li').removeClass('active');
+            $(this).addClass('active');
+        });
+        if ($('.featured__filter').length > 0) {
+            var containerEl = document.querySelector('.featured__filter');
+            var mixer = mixitup(containerEl);
+        }
+    });
+    // End customize
     
 })(jQuery);
 

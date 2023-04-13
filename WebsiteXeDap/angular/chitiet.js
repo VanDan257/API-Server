@@ -9,8 +9,18 @@ app.controller("ChitietCtrl", function ($scope, $http, $window) {
             method: 'GET', 
             url: current_url + '/api/Product/get-by-id/'+ value,
         }).then(function (response) { 
-            console.log(response.data);
             $scope.sanpham = response.data;
+
+            let search = {};
+            search.page = 1;
+            search.pageSize = 6;
+            search.CateID = $scope.sanpham.cateID
+            $http.post(current_url + '/api/Product/search', search).then(function (response) {
+                $scope.spsearch = response.data;
+                console.log($scope.spsearch[0]);
+                makeScript('js/main.js')
+            });
+
 			makeScript('js/main.js')
         });
     };  
@@ -24,7 +34,6 @@ app.controller("ChitietCtrl", function ($scope, $http, $window) {
             method: 'GET', 
             url: current_url + '/api/Product/getlistimgbyproid?proId='+ value,
         }).then(function (response) { 
-            // console.log(response.data);
             $scope.images = response.data;
 			makeScript('js/main.js')
         });
@@ -39,7 +48,7 @@ app.controller("ChitietCtrl", function ($scope, $http, $window) {
             method: 'GET', 
             url: current_url + '/api/Product/getlistspecificationsbyproid?proId='+ value,
         }).then(function (response) { 
-            console.log(response.data);
+            // console.log(response.data);
             $scope.specifications = response.data;
 			makeScript('js/main.js')
         });
@@ -56,6 +65,19 @@ app.controller("ChitietCtrl", function ($scope, $http, $window) {
         });
     }
     $scope.LoadlistCategory();
+
+    // $scope.Search = function(){
+    //     let search = {};
+    //     search.page = 1;
+    //     search.pageSize = 6;
+    //     search.CateID = value
+    //     $http.post(current_url + '/api/Product/search', search).then(function (response) {
+    //         $scope.spsearch = response.data;
+    //         makeScript('js/main.js')
+    //     });
+    // }
+
+    // $scope.Search();
 
     $scope.addToCart= function(product){
         $window.addToCart(product);
