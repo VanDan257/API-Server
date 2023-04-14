@@ -35,7 +35,7 @@ namespace DAL
                     "@Note", model.Note,
                     "@listjson_detail", model.listjson_detail != null ? MessageConvert.SerializeObject(model.listjson_detail) : null);
                 //"@objectjson_customer", model.objectjson_customer != null ? MessageConvert.SerializeObject(model.objectjson_customer) : null,
-                if ((result != null && string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                if ((result != null && string.IsNullOrEmpty(result.ToString())) || (result != "" && string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
                 }

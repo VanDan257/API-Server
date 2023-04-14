@@ -28,7 +28,7 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
 
-<body>
+<body ng-app="app" ng-controller="ListBike">
     <header id="header">
         <!-- Topbar Start -->
         <div class="header-top bg-gray-900 py-2">
@@ -182,52 +182,27 @@
         <div class="row px-xl-5">
             <div class="col-lg-8">
                 <div class="mb-4">
-                    <h4 class="font-weight-semi-bold mb-4">Billing Address</h4>
+                    <h4 class="font-weight-semi-bold mb-4">Thông tin khách hàng</h4>
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <label>First Name</label>
-                            <input class="form-control" type="text" placeholder="John">
+                            <label>Họ tên</label>
+                            <input class="form-control" ng-model="tenkh" type="text" placeholder="John">
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>Last Name</label>
-                            <input class="form-control" type="text" placeholder="Doe">
+                            <label>Email</label>
+                            <input class="form-control" ng-model="emailkh" type="text" placeholder="example@email.com">
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>E-mail</label>
-                            <input class="form-control" type="text" placeholder="example@email.com">
+                            <label>Số điện thoại</label>
+                            <input class="form-control" ng-model="sdtkh" type="text" placeholder="+123 456 789">
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>Mobile No</label>
-                            <input class="form-control" type="text" placeholder="+123 456 789">
+                            <label>Địa chỉ</label>
+                            <input class="form-control" ng-model="diachikh" type="text" placeholder="123 Street">
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>Address Line 1</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Address Line 2</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Country</label>
-                            <select class="custom-select">
-                                <option selected>United States</option>
-                                <option>Afghanistan</option>
-                                <option>Albania</option>
-                                <option>Algeria</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>City</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>State</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>ZIP Code</label>
-                            <input class="form-control" type="text" placeholder="123">
+                            <label>Ghi chú</label>
+                            <input class="form-control" ng-model="notekh" type="text" placeholder="123 Street">
                         </div>
                         <div class="col-md-12 form-group">
                             <div class="custom-control custom-checkbox">
@@ -247,49 +222,24 @@
                     <h4 class="font-weight-semi-bold mb-4">Shipping Address</h4>
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <label>First Name</label>
+                            <label>Họ tên</label>
                             <input class="form-control" type="text" placeholder="John">
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>Last Name</label>
-                            <input class="form-control" type="text" placeholder="Doe">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>E-mail</label>
+                            <label>Email</label>
                             <input class="form-control" type="text" placeholder="example@email.com">
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>Mobile No</label>
+                            <label>Số điện thoại</label>
                             <input class="form-control" type="text" placeholder="+123 456 789">
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>Address Line 1</label>
+                            <label>Địa chỉ</label>
                             <input class="form-control" type="text" placeholder="123 Street">
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>Address Line 2</label>
+                            <label>Ghi chú</label>
                             <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Country</label>
-                            <select class="custom-select">
-                                <option selected>United States</option>
-                                <option>Afghanistan</option>
-                                <option>Albania</option>
-                                <option>Algeria</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>City</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>State</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>ZIP Code</label>
-                            <input class="form-control" type="text" placeholder="123">
                         </div>
                     </div>
                 </div>
@@ -297,67 +247,25 @@
             <div class="col-lg-4">
                 <div class="card border-secondary mb-5">
                     <div class="card-header bg-gray-200 border-0">
-                        <h4 class="font-weight-semi-bold m-0">Order Total</h4>
+                        <h4 class="font-weight-semi-bold m-0">Thông tin đơn hàng</h4>
                     </div>
                     <div class="card-body">
-                        <h5 class="font-weight-medium mb-3">Products</h5>
+                        <h5 class="font-weight-medium mb-3">Sản phẩm</h5>
                         <div class="order-products">
-                            <div class="d-flex justify-content-between">
-                                <p>Titoni watch 40 mm 83919 S-612 1</p>
-                                <p>$150</p>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Titoni watch 40 mm 83919 S-612 2</p>
-                                <p>$150</p>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Titoni watch 40 mm 83919 S-612 3</p>
-                                <p>$150</p>
-                            </div>
-                        </div>
-                        <hr class="mt-0">
-                        <div class="d-flex justify-content-between mb-3 pt-1">
-                            <h6 class="font-weight-medium">Subtotal</h6>
-                            <h6 class="subtotal-checkout font-weight-medium">$150</h6>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium">$10</h6>
                         </div>
                     </div>
                     <div class="card-footer border-secondary bg-transparent">
                         <div class="d-flex justify-content-between mt-2">
-                            <h5 class="font-weight-bold">Total</h5>
-                            <h5 class="total-checkout font-weight-bold">$160</h5>
+                            <h5 class="font-weight-bold">Tổng tiền</h5>
+                            <h5 class="total-checkout font-weight-bold">0₫</h5>
                         </div>
                     </div>
                 </div>
                 <div class="card border-secondary mb-5">
-                    <div class="card-header bg-gray-200 border-0">
-                        <h4 class="font-weight-semi-bold m-0">Payment</h4>
-                    </div>
                     <div class="card-body">
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="paypal">
-                                <label class="custom-control-label" for="paypal">Paypal</label>
-                            </div>
+                        <div class="card-footer border-secondary bg-transparent">
+                            <button  ng-click="Checkout()" class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Đặt hàng</button>
                         </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="directcheck">
-                                <label class="custom-control-label" for="directcheck">Direct Check</label>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
-                                <label class="custom-control-label" for="banktransfer">Bank Transfer</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer border-secondary bg-transparent">
-                        <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
                     </div>
                 </div>
             </div>
@@ -372,38 +280,26 @@
             <div class="row  pt-5">
                 <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                     <a href="" class="text-decoration-none">
-                        <h2 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">WATCH</span><span class="text-light">SHOP</span></h2>
+                        <h2 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">CYCLE</span><span class="text-light">SHOP</span></h2>
                     </a>
                     <p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum dolore amet erat.</p>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-light mr-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-envelope text-light mr-3"></i>info@example.com</p>
-                    <p class="mb-0"><i class="fa fa-phone-alt text-light mr-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-light mr-3"></i>Đình Dù - Văn Lâm - Hưng Yên</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-light mr-3"></i>vandan250702@gmail.com</p>
+                    <p class="mb-0"><i class="fa fa-phone-alt text-light mr-3"></i>+84 343 6286 48</p>
                 </div>
                 <div class="col-lg-8 col-md-12">
                     <div class="row">
-                        <div class="col-md-4 mb-5">
+                        <div class="col-md-5 mb-5">
                             <h5 class="font-weight-bold text-light mb-4">Quick Links</h5>
                             <div class="d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                                <a class="text-light mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                                <a class="text-light mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                                <a class="text-light mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                                <a class="text-light mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                                <a class="text-light" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                                <a class="text-light mb-2" href="TrangChu.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                                <a class="text-light mb-2" href="DanhMucSanPham.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                                <a class="text-light mb-2" href="GioHang.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                                <a class="text-light mb-2" href="ThanhToan.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                                <a class="text-light" href="DichVuBanHang.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                             </div>
                         </div>
-                        <div class="col-md-4 mb-5">
-                            <h5 class="font-weight-bold text-light mb-4">Quick Links</h5>
-                            <div class="d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                                <a class="text-light mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                                <a class="text-light mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                                <a class="text-light mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                                <a class="text-light mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                                <a class="text-light" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-5">
+                        <div class="col-md-7 mb-5">
                             <h5 class="font-weight-bold text-light mb-4">Newsletter</h5>
                             <form action="">
                                 <div class="form-group">
@@ -434,7 +330,10 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.js"></script>
     <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 
-
+    <!-- Angularjs -->
+    <script src="/angular/angular.min.js"></script>
+    <script src="/angular/global.js"></script>
+    <script src="/angular/home.js"></script>
 
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>

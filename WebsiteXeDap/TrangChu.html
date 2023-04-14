@@ -251,7 +251,7 @@
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <a href="SanPham.html?id={{ listSanPhamMoi[0].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                            <a type="button"  ng-click="addToCart(listSanPhamMoi[0])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                         </div>
                     </div>
                     <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[1].proID }}">
@@ -267,7 +267,7 @@
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <a href="SanPham.html?id={{ listSanPhamMoi[1].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                            <a type="button" ng-click="addToCart(listSanPhamMoi[1])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                         </div>
                     </div>
                     <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[2].proID }}">
@@ -283,7 +283,7 @@
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <a href="SanPham.html?id={{ listSanPhamMoi[2].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                            <a type="button" ng-click="addToCart(listSanPhamMoi[2])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                         </div>
                     </div>
                     <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[3].proID }}">
@@ -299,7 +299,7 @@
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <a href="SanPham.html?id={{ listSanPhamMoi[3].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                            <a type="button" ng-click="addToCart(listSanPhamMoi[3])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                         </div>
                     </div>
                     <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[4].proID }}">
@@ -315,7 +315,7 @@
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <a href="SanPham.html?id={{ listSanPhamMoi[4].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                            <a type="button" ng-click="addToCart(listSanPhamMoi[4])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                         </div>
                     </div>
                     <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[4].proID }}">
@@ -331,7 +331,7 @@
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <a href="SanPham.html?id={{ listSanPhamMoi[5].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                            <a type="button" ng-click="addToCart(listSanPhamMoi[5])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                         </div>
                     </div>
             </div>
@@ -361,7 +361,7 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="SanPham.html?id={{ newproducts[0].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        <a type="button" ng-click="addToCart(newproducts[0])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                     </div>
                 </div>
                 <div class="card product-item border-0 mb-4" data-index="{{ newproducts[1].proID }}">
@@ -377,7 +377,7 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="SanPham.html?id={{ newproducts[1].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        <a type="button" ng-click="addToCart(newproducts[1])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                     </div>
                 </div>
                 <div class="card product-item border-0 mb-4" data-index="{{ newproducts[2].proID }}">
@@ -393,7 +393,7 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="SanPham.html?id={{ newproducts[2].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        <a type="button" ng-click="addToCart(newproducts[1])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                     </div>
                 </div>
                 <div class="card product-item border-0 mb-4" data-index="{{ newproducts[3].proID }}">
@@ -409,7 +409,7 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="SanPham.html?id={{ newproducts[3].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        <a type="button" ng-click="addToCart(newproducts[1])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                     </div>
                 </div>
                 <div class="card product-item border-0 mb-4" data-index="{{ newproducts[4].proID }}">
@@ -425,7 +425,7 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="SanPham.html?id={{ newproducts[4].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        <a type="button" ng-click="addToCart(newproducts[4])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                     </div>
                 </div>
                 <div class="card product-item border-0 mb-4" data-index="{{ newproducts[4].proID }}">
@@ -441,7 +441,7 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="SanPham.html?id={{ newproducts[5].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        <a type="button"  ng-click="addToCart(newproducts[5])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                     </div>
                 </div>
         </div>
@@ -511,7 +511,7 @@
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <a href="SanPham.html?id={{ xedap.proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                            <a type="button"  ng-click="addToCart(xedap)" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -531,7 +531,7 @@
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <a href="SanPham.html?id={{ phutung.proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                            <a type="button" ng-click="addToCart(phutung)"  class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -551,7 +551,7 @@
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <a href="SanPham.html?id={{ phukien.proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                            <a type="button" ng-click="addToCart(phukien)"  class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -571,7 +571,7 @@
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <a href="SanPham.html?id={{ botruyendong.proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                            <a type="button" ng-click="addToCart(botruyendong)"  class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -591,7 +591,7 @@
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <a href="SanPham.html?id={{ khungsuon.proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a type="button" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                            <a type="button" ng-click="addToCart(khungsuon)"  class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -643,38 +643,26 @@
             <div class="row  pt-5">
                 <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                     <a href="" class="text-decoration-none">
-                        <h2 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">WATCH</span><span class="text-light">SHOP</span></h2>
+                        <h2 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">CYCLE</span><span class="text-light">SHOP</span></h2>
                     </a>
                     <p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum dolore amet erat.</p>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-light mr-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-envelope text-light mr-3"></i>info@example.com</p>
-                    <p class="mb-0"><i class="fa fa-phone-alt text-light mr-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-light mr-3"></i>Đình Dù - Văn Lâm - Hưng Yên</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-light mr-3"></i>vandan250702@gmail.com</p>
+                    <p class="mb-0"><i class="fa fa-phone-alt text-light mr-3"></i>+84 343 6286 48</p>
                 </div>
                 <div class="col-lg-8 col-md-12">
                     <div class="row">
-                        <div class="col-md-4 mb-5">
+                        <div class="col-md-5 mb-5">
                             <h5 class="font-weight-bold text-light mb-4">Quick Links</h5>
                             <div class="d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                                <a class="text-light mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                                <a class="text-light mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                                <a class="text-light mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                                <a class="text-light mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                                <a class="text-light" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                                <a class="text-light mb-2" href="TrangChu.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                                <a class="text-light mb-2" href="DanhMucSanPham.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                                <a class="text-light mb-2" href="GioHang.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                                <a class="text-light mb-2" href="ThanhToan.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                                <a class="text-light" href="DichVuBanHang.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                             </div>
                         </div>
-                        <div class="col-md-4 mb-5">
-                            <h5 class="font-weight-bold text-light mb-4">Quick Links</h5>
-                            <div class="d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                                <a class="text-light mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                                <a class="text-light mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                                <a class="text-light mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                                <a class="text-light mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                                <a class="text-light" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-5">
+                        <div class="col-md-7 mb-5">
                             <h5 class="font-weight-bold text-light mb-4">Newsletter</h5>
                             <form action="">
                                 <div class="form-group">
@@ -704,7 +692,6 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
-
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -713,6 +700,50 @@
     <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.js"></script>
     <script src="http://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script src="js/mixitup.min.js"></script> 
+
+    <!-- Thêm vào giỏ hàng -->
+    <script>
+        function addToCart(item) {
+            item.quantity = 1;
+            var list;
+            if (localStorage.getItem('cart') == null) {
+                list = [item];
+            } else {
+                list = JSON.parse(localStorage.getItem('cart')) || [];
+                let ok = true;
+                for (let x of list) {
+                    if (x.proID == item.proID) {
+                        x.quantity += 1;
+                        ok = false;
+                        break;
+                    }
+                }
+                if (ok) {
+                    list.push(item);
+                }
+            }
+
+            let toastMessage = document.querySelector('.toast-message');
+
+            toastMessage.style.display = 'block';
+
+                item.innerHTML = 
+                    `<div class="spinner-border spinner-border-sm" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>`;
+
+                
+
+                setTimeout(() => {
+                    toastMessage.style.display = 'none';
+                    item.innerHTML = `Show cart <i class="fa-solid fa-arrow-right ml-1"></i>`;
+                    item.classList.remove('btn-add-cart');
+                    item.setAttribute('href', './GioHang.html');
+                }, 1000)
+
+            localStorage.setItem('cart', JSON.stringify(list));
+        }
+    </script>
 
     <!-- Angularjs -->
     <script src="/angular/angular.min.js"></script>

@@ -17,7 +17,6 @@ app.controller("ChitietCtrl", function ($scope, $http, $window) {
             search.CateID = $scope.sanpham.cateID
             $http.post(current_url + '/api/Product/search', search).then(function (response) {
                 $scope.spsearch = response.data;
-                console.log($scope.spsearch[0]);
                 makeScript('js/main.js')
             });
 

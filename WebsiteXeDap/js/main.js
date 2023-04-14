@@ -1,8 +1,7 @@
 (function ($) {
     "use strict";
 
-    let dataCartStorage = JSON.parse(localStorage.getItem('cartData')) || [];
-    // console.log(dataCartStorage)
+    let dataCartStorage = JSON.parse(localStorage.getItem('cart')) || [];
     let sumCart = document.querySelector('.sum-cart');
     sumCart.innerText = dataCartStorage.length || 0;
     
@@ -17,96 +16,31 @@
         }
     }
     
-
-    function addDataCart() {
-        const btnAddCart = document.querySelectorAll('.btn-add-cart');
-        let toastMessage = document.querySelector('.toast-message');
-
-        btnAddCart.forEach((item, index) => {
-            item.onclick = () => {
-                if(item.matches('.btn-add-cart')) {
-                    let parent = getParent(item, '.product-item');
-                let data = {};
-                data.id = parent.getAttribute('data-index');
-                data.name = parent.querySelector('.product-name').innerText;
-                data.price = Number((parent.querySelector('.product-price').innerText).replace('$', ''));
-                data.quantity = parent.querySelector('input[name="quantity"]') || 1;
-                data.thumbnail = parent.querySelector('.product-thumbnail').src;
-
-
-                // nếu giỏ hàng không rỗng
-                if(dataCartStorage.length > 0) {
-
-                    // tạo id lưu trữ sản phẩm
-                    let id;
-
-                    // lặp qua mảng giỏ hàng
-                    let check = dataCartStorage.some((item, index) => {
-                        if(item.id === data.id) {
-                            id = index;
-                        }
-
-                        return item.id === data.id;
-                    })
-
-                    // nếu sản phẩm đã tồn tại trong giỏ hàng, tăng số lượng sản phẩm thêm 1
-                    // ngược lại sẽ thêm sản phẩm vào giỏ hàng
-                    if(check) {
-                        dataCartStorage[id].quantity += 1; 
-                    } else {
-                        dataCartStorage.push(data);
-                    }
-
-                } else {
-                    dataCartStorage.push(data);
-                }
-
-                sumCart.innerText = dataCartStorage.length;
-
-                toastMessage.style.display = 'block';
-
-                item.innerHTML = 
-                    `<div class="spinner-border spinner-border-sm" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>`;
-
-                
-
-                setTimeout(() => {
-                    toastMessage.style.display = 'none';
-                    item.innerHTML = `Show cart <i class="fa-solid fa-arrow-right ml-1"></i>`;
-                    item.classList.remove('btn-add-cart');
-                    item.setAttribute('href', './cart.html');
-                }, 500)
-
-                // Lưu dữ liệu vào biến localStorage
-                localStorage.setItem('cartData', JSON.stringify(dataCartStorage));
-                }
-            }
-
-            
-        })
-    }
-
     // get cart data
     function getDataCart() {
         if(document.getElementById('table-cart')) {
             const tableCart = document.querySelector('#table-cart tbody');
-            const subTotalCart = document.querySelector('.subtotal-cart');
-            const totalCart = document.querySelector('.total-cart');
+            const totalCart = document.querySelector('#total-cart');
             let result = 0;
+            let total = 0;
             let htmls;
 
             if(dataCartStorage.length > 0) {
                 htmls = dataCartStorage.map((item, index) => {
 
+                    const formatter = new Intl.NumberFormat('vi-VN', {
+                        style: 'currency',
+                        currency: 'VND',
+                        minimumFractionDigits: 0,
+                      });
                     result += item.quantity * item.price;
+                    total = formatter.format(result);
 
                     return `
                         <tr>
                             <td class="align-middle">${index + 1}</td>
-                            <td class="align-middle"><img src="${item.thumbnail}" alt="" style="width: 50px;"> ${item.name}</td>
-                            <td class="align-middle">$${item.price}</td>
+                            <td class="align-middle"><img src="${item.imagePath}" alt="" style="width: 50px;"> ${item.title}</td>
+                            <td class="align-middle">${formatter.format(item.price)}</td>
                             <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
                                     <div class="input-group-btn">
@@ -123,14 +57,15 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="align-middle">$${item.price * item.quantity}</td>
+                            <td class="align-middle">${formatter.format(item.price * item.quantity)}</td>
                             <td class="align-middle"><button class="btn-delete-cart btn btn-sm btn-primary" data-delete="${item.id}"> <i class="fa fa-times"></i></button></td>
                         </tr>
                     `;
                 });
 
-                subTotalCart.innerText = `$${result}`;
-                totalCart.innerText = `$${result + 10}`;
+                // subTotalCart.innerText = result;
+                totalCart.innerText = total;
+                // totalCart.text(result + '₫');
             
                 tableCart.innerHTML = htmls.join('');
 
@@ -154,7 +89,7 @@
                     }
                 });
 
-                localStorage.setItem('cartData', JSON.stringify(dataCartStorage));
+                localStorage.setItem('cart', JSON.stringify(dataCartStorage));
 
                 location.reload();
 
@@ -178,7 +113,7 @@
 
                     dataCartStorage.splice(index, 1);
     
-                    localStorage.setItem('cartData', JSON.stringify(dataCartStorage));
+                    localStorage.setItem('cart', JSON.stringify(dataCartStorage));
 
                     location.reload();
 
@@ -196,6 +131,11 @@
 
 
     function handleCheckout() {
+        const formatter = new Intl.NumberFormat('vi-VN', {
+            style: 'currency',
+            currency: 'VND',
+            minimumFractionDigits: 0,
+          });
         if(document.querySelector('.btn-proceed-ckeckout')) {
             const btnRedirect = document.querySelector('.btn-proceed-ckeckout');
             let toastMessage = document.querySelector('.toast-message');
@@ -214,27 +154,27 @@
 
         }
 
-
         // render view checkout 
         if(dataCartStorage.length > 0 && document.querySelector('.order-products')) {
             const girdOrderProduct = document.querySelector('.order-products');
             let subTotalCheckout = document.querySelector('.subtotal-checkout');
             let totalCheckout = document.querySelector('.total-checkout');
             let result = 0;
+            let total = 0;
 
             const htmls = dataCartStorage.map((item) => {
                 result += item.price * item.quantity;
+                total = formatter.format(result);
                 return `
                     <div class="d-flex justify-content-between">
-                        <p>${item.name} x${item.quantity}</p>
-                        <p>$${item.price * item.quantity}</p>
+                        <h6>${item.title} x${item.quantity}</h6>
+                        <p>${formatter.format(item.price * item.quantity)}</p>
                     </div>
                 `;
             });
 
             girdOrderProduct.innerHTML = htmls.join('');
-            subTotalCheckout.innerText = `$${result}`;
-            totalCheckout.innerText = `$${result + 10}`;
+            totalCheckout.innerText = `${total}`;
 
         }
     }
@@ -311,7 +251,7 @@
         }
     });
 
-    addDataCart();
+    // addDataCart();
     getDataCart();
     updateCart();
     deleteCart();

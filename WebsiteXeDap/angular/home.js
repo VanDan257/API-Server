@@ -150,6 +150,7 @@ app.controller("ListBike", function ($scope, $http, $window) {
     }
 
     $scope.addToCart= function(product){
+        // console.log(product);
         $window.addToCart(product);
     }
 
