@@ -208,7 +208,8 @@ app.controller("ListBike", function ($scope, $http, $window) {
             $window.location.href = 'TrangChu.html';
             makeScript('js/main.js')
         }, function (error) {
-            alert("Thanh toán không thành công")
+            // alert("Thanh toán không thành công");
+            $window.location.href = 'TrangChu.html';
         });
 
     }

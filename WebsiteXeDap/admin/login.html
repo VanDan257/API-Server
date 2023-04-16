@@ -57,7 +57,6 @@
     </section>
 
     <script src="/js/jquery-3.6.1.min.js"></script>
-    <!-- <script src="/angular/angular.min.js"></script> -->
 
     <script> 
         function Login() {
@@ -84,29 +83,6 @@
         };
     </script>
 
-    <!-- <script>
-        var app = angular.module('XeDap', []);
-        app.controller('Login', function ($scope, $http, $window) {
-
-            let account = {};
-            
-            
-            
-            $scope.Login = Login;
-            function Login() {
-                account.UserName = $scope.UserName;
-                account.Password = $scope.Password;
-                account.RememberMe = true;
-                console.log(account);
-                $http.post("https://localhost:7059/api/User/login", account).then(function (result) {
-                    $window.location.href = 'dashboard.html';
-                }, function (error) {
-                    alert("Đăng nhập không thành công")
-                })
-            }
-
-        });
-    </script> -->
 
 </body>
 </html>
