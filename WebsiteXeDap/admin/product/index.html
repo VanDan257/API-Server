@@ -124,7 +124,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  " href="/Admin/Orders/Index">
+                    <a class="nav-link  " href="/admin/order/index.html">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="fa-solid fa-file-invoice"></i>
                         </div>
@@ -510,6 +510,13 @@
     <script src="/Assets/Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="/js/jquery-3.6.1.min.js"></script>
+
+    <script>
+        var user = JSON.parse(localStorage.getItem('user'));
+        if (!user) {
+            window.location.href = "login.html";
+        }
+    </script>
 
     <!--   Core JS Files   -->
     <script src="/Assets/js/core/popper.min.js"></script>
