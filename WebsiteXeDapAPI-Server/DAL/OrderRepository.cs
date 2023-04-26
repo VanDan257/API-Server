@@ -29,16 +29,16 @@ namespace DAL
                 var result = _context.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_order_create",
                     "@Phone", model.Phone,
                     "@Email", model.Email,
-                    "@Recipient", model.Recipient,
-                    "@DeliveryAddress", model.DeliveryAddress,
+                    "@Recipient", model.CusName,
+                    "@DeliveryAddress", model.Address,
                     "@TotalPay", model.TotalPay,
                     "@Note", model.Note,
                     "@listjson_detail", model.listjson_detail != null ? MessageConvert.SerializeObject(model.listjson_detail) : null);
                 //"@objectjson_customer", model.objectjson_customer != null ? MessageConvert.SerializeObject(model.objectjson_customer) : null,
-                if ((result != null && string.IsNullOrEmpty(result.ToString())) || (result != "" && string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
-                {
-                    throw new Exception(Convert.ToString(result) + msgError);
-                }
+                //if ((result != null && string.IsNullOrEmpty(result.ToString())) || (result != "" && string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                //{
+                //    throw new Exception(Convert.ToString(result) + msgError);
+                //}
                 return true;
             }
             catch (Exception ex)

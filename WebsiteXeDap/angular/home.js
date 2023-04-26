@@ -192,15 +192,11 @@ app.controller("ListBike", function ($scope, $http, $window) {
 
         for(var i=0; i<cart.length; i++){
             totalPay += cart[i].quantity*cart[i].price;
-            orderdetail.proID = cart[i].proID;
-            orderdetail.quantity = cart[i].quantity;
-            orderdetail.price = cart[i].price;
-            listjson_detail.push(orderdetail);
         }
 
         Order.totalPay = totalPay;
         Order.objectjson_customer = objectjson_customer;
-        Order.listjson_detail = listjson_detail;
+        Order.listjson_detail = cart;
 
         $http.post(current_url + '/api/Order/create-donhang', Order).then(function (response) {
 

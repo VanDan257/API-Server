@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Giao dien trang quan tri - Danh sách hoá đơn</title>
+    <title>Giao dien trang quan tri - Chi tiết hoá đơn</title>
 
     <!-- Custom fonts for this template-->
 
@@ -221,18 +221,81 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Danh sách hoá đơn</h1>
+                        <h1 class="page-header">Chi tiết hoá đơn</h1>
                     </div>
                 </div>
 
-                <div class="container-fluid">
                 
-                    <table class="table table-bordered table-striped table-hover" id="dataTable">
+                <div id="dvContainer1">
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            Ngày đặt
+                        </dt>
+            
+                        <dd>
+                            {{ order.orderDate }}
+                        </dd>
+            
+                        <dt>
+                            Địa chỉ
+                        </dt>
+            
+                        <dd>
+                            {{ order.address }}
+                        </dd>
+            
+                        <dt>
+                            Trạng thái
+                        </dt>
+            
+                        <dd>
+                            {{ order.status }}
+                        </dd>
+            
+                        <dt>
+                            Ghi chú
+                        </dt>
+            
+                        <dd>
+                            {{ order.note }}
+                        </dd>
+            
+                        <dt>
+                            Số điện thoại
+                        </dt>
+            
+                        <dd>
+                            {{ order.phone }}
+                        </dd>
+            
+                        <dt>
+                            Tên khách hàng
+                        </dt>
+            
+                        <dd>
+                            {{ order.cusName }}
+                        </dd>
+            
+                        <dt>
+                            Tổng tiền
+                        </dt>
+            
+                        <dd>
+                            {{ order.totalPay | number }}₫
+                        </dd>
+            
+                    </dl>
+            
+                    <h3>Thông tin khách hàng</h3>
+                    <table class="table table-bordered table-striped" id="dataTable">
                         <thead>
                             <tr>
-                                <th>TT</th>
                                 <th>
                                     Tên khách hàng
+                                </th>
+                                <th>
+                                    Địa chỉ
                                 </th>
                                 <th>
                                     Số điện thoại
@@ -240,47 +303,63 @@
                                 <th>
                                     Email
                                 </th>
-                                <th>
-                                    Ghi chú
-                                </th>
-                                <th>
-                                    Trạng thái
-                                </th>
-                                <th>
-                                    Tổng tiền
-                                </th>
-                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                                <tr ng-repeat="order in orders">
-                                    <td>{{$index+1}}</td>
-                                    <td>
-                                        {{ order.cusName }}
-                                    </td>
-                                    <td>
-                                        {{ order.phone }}
-                                    </td>
-                                    <td>
-                                        {{ order.email }}
-                                    </td>
-                                    <td>
-                                        {{ order.note}}
-                                    </td>
-                                    <td>
-                                        {{ order.status}}
-                                    </td>
-                                    <td>
-                                        {{ order.totalPay  | number}}₫
-                                    </td>
-                                    <td style="white-space: nowrap;">
-                                        <a href="/admin/order/edit.html?id={{order.ordID}}"><i class="text-warning fa-solid fa-pen-to-square"></i></a>
-                                        <a href="/admin/order/detail.html?id={{order.ordID}}"><i class="fa-solid fa-circle-info"></i></a>
-                                        <a href="/admin/order/delete.html?id={{order.ordID}}"><i class="text-danger fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
+                            
+                            <tr>
+                                <td>
+                                    {{ order.cusName }}
+                                </td>
+                                <td>
+                                    {{ order.address }}
+                                </td>
+                                <td>
+                                    {{ order.phone }}
+                                </td>
+                                <td>
+                                    {{ order.email }}
+                                </td>
+                            </tr>
                         </tbody>
-                
+                    </table>
+            
+                    <h3>Chi tiết đơn hàng</h3>
+                    <table class="table table-bordered table-striped" id="dataTable">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>
+                                    Hình ảnh
+                                </th>
+                                <th>
+                                    Tên sản phẩm
+                                </th>
+                                <th>
+                                    Số lượng
+                                </th>
+                                <th>
+                                    Giá tiền
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="ctdh in order.listjson_detail">
+                                <td>{{ $index+1 }}</td>
+                                <td>
+                                    <img style="width: 150px;" src="{{ listcthd[$index].imagePath }}" />
+                                </td>
+                                <td>
+                                    {{ listcthd[$index].title }}
+                                </td>
+                                <td>
+                                    {{ ctdh.quantity }}
+                                </td>
+                                <td>
+                                    {{ ctdh.price | number }}₫
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
 
@@ -607,14 +686,27 @@
             // $scope.products;
             // $scope.listSanPhamMoi;  
             // $scope.listCategory;
-            $scope.LoadListBike = function () {		 
+            var listcthd = [];
+            $scope.LoadListBike = function () {	
+                var key = 'id';
+                var value = window.location.search.substring(window.location.search.indexOf(key)+key.length+1);		 
                 $http({
                     method: 'GET', 
-                    url: 'https://localhost:7059/api/Order/getall',
+                    url: 'https://localhost:7059/api/Order/get-by-id?id='+value,
                 }).then(function (response) {
-                    console.log(response.data);
-                    $scope.orders = response.data;
+                    $scope.order = response.data;
                     makeScript('js/main.js')
+                    response.data.listjson_detail.forEach(cthd => {
+                        $http({
+                            method: 'GET',
+                            url: 'https://localhost:7059/api/Products/get-by-id/'+cthd.proID,
+                        }).then(function(response){
+                            // console.log(response.data);
+                            listcthd.push(response.data);
+                            $scope.listcthd=listcthd;
+                        });
+                    });
+                    console.log(listcthd);
                 });
             };  
             $scope.LoadListBike();

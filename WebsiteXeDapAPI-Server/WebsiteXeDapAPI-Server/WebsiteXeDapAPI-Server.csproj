@@ -22,6 +22,7 @@
     <Folder Include="FileUpLoad\files\" />
     <Folder Include="FileUpLoad\flash\" />
     <Folder Include="FileUpLoad\ImgBike\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>
