@@ -1,0 +1,179 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>WebsiteXeDapAPI_Server</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.14" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj" />
+    <ProjectReference Include="..\DAL\DAL.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\FileUpLoad\files\" />
+    <Folder Include="wwwroot\FileUpLoad\flash\" />
+    <Folder Include="wwwroot\FileUpLoad\ImgBike\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\FileUpLoad\btd-img35 %283%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\3.png" />
+    <None Include="wwwroot\FileUpLoad\images\background1.jpg" />
+    <None Include="wwwroot\FileUpLoad\images\btd-img1.png" />
+    <None Include="wwwroot\FileUpLoad\images\btd-img3%281%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\btd-img3.png" />
+    <None Include="wwwroot\FileUpLoad\images\btd-img35 %2811%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\btd-img35 %288%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\btd-img36 %281%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\btd-img4.png" />
+    <None Include="wwwroot\FileUpLoad\images\btd-img5.png" />
+    <None Include="wwwroot\FileUpLoad\images\btd-img6.png" />
+    <None Include="wwwroot\FileUpLoad\images\btd-img7.png" />
+    <None Include="wwwroot\FileUpLoad\images\demo1.jpg" />
+    <None Include="wwwroot\FileUpLoad\images\img-extra1.png" />
+    <None Include="wwwroot\FileUpLoad\images\img-extra2.png" />
+    <None Include="wwwroot\FileUpLoad\images\img-extra3.png" />
+    <None Include="wwwroot\FileUpLoad\images\img-extra4.png" />
+    <None Include="wwwroot\FileUpLoad\images\img-extra5.png" />
+    <None Include="wwwroot\FileUpLoad\images\img-extra6.png" />
+    <None Include="wwwroot\FileUpLoad\images\img-extra7.png" />
+    <None Include="wwwroot\FileUpLoad\images\img1.png" />
+    <None Include="wwwroot\FileUpLoad\images\img11.png" />
+    <None Include="wwwroot\FileUpLoad\images\img14.png" />
+    <None Include="wwwroot\FileUpLoad\images\img15.png" />
+    <None Include="wwwroot\FileUpLoad\images\img16.png" />
+    <None Include="wwwroot\FileUpLoad\images\img17.png" />
+    <None Include="wwwroot\FileUpLoad\images\img18.png" />
+    <None Include="wwwroot\FileUpLoad\images\img2.png" />
+    <None Include="wwwroot\FileUpLoad\images\img21.png" />
+    <None Include="wwwroot\FileUpLoad\images\img22.png" />
+    <None Include="wwwroot\FileUpLoad\images\img23.png" />
+    <None Include="wwwroot\FileUpLoad\images\img24.png" />
+    <None Include="wwwroot\FileUpLoad\images\img31.png" />
+    <None Include="wwwroot\FileUpLoad\images\img32.png" />
+    <None Include="wwwroot\FileUpLoad\images\img33.png" />
+    <None Include="wwwroot\FileUpLoad\images\img34.png" />
+    <None Include="wwwroot\FileUpLoad\images\img35.png" />
+    <None Include="wwwroot\FileUpLoad\images\img36.png" />
+    <None Include="wwwroot\FileUpLoad\images\img37.png" />
+    <None Include="wwwroot\FileUpLoad\images\img38.png" />
+    <None Include="wwwroot\FileUpLoad\images\img4.png" />
+    <None Include="wwwroot\FileUpLoad\images\img5.png" />
+    <None Include="wwwroot\FileUpLoad\images\img6.png" />
+    <None Include="wwwroot\FileUpLoad\images\img7.png" />
+    <None Include="wwwroot\FileUpLoad\images\img8.png" />
+    <None Include="wwwroot\FileUpLoad\images\ks-img %281%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\ks-img %2811%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\ks-img %2812%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\ks-img %284%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\ks-img %288%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\ks-img %289%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\news1.jpg" />
+    <None Include="wwwroot\FileUpLoad\images\news5.jpg" />
+    <None Include="wwwroot\FileUpLoad\images\pk-img %281%29%281%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pk-img %281%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pk-img %2810%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pk-img %2812%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pk-img %2813%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pk-img %2815%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pk-img %2819%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pk-img %2820%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pk-img %283%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pk-img %284%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pk-img %285%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pk-img %286%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pt-img %2810%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pt-img %2811%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pt-img %2816%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pt-img %282%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pt-img %283%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pt-img %284%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pt-img %287%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\pt-img %288%29.png" />
+    <None Include="wwwroot\FileUpLoad\images\th.jpg" />
+    <None Include="wwwroot\FileUpLoad\ks-img %283%29.png" />
+    <None Include="wwwroot\FileUpLoad\ks-img %284%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\3.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\btd-img1.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\btd-img3%281%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\btd-img3.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\btd-img35 %2811%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\btd-img35 %288%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\btd-img36 %281%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\btd-img4.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\btd-img5.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\btd-img6.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\btd-img7.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\demo1.jpg" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img-extra1.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img-extra2.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img-extra3.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img-extra4.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img-extra5.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img-extra6.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img-extra7.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img1.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img11.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img14.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img15.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img16.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img17.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img18.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img2.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img21.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img22.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img23.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img24.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img31.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img32.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img33.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img34.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img35.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img36.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img37.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img38.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img4.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img5.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img6.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img7.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\img8.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\ks-img %281%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\ks-img %2811%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\ks-img %2812%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\ks-img %284%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\ks-img %288%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\ks-img %289%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\news5.jpg" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pk-img %281%29%281%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pk-img %281%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pk-img %2810%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pk-img %2812%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pk-img %2813%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pk-img %2815%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pk-img %2819%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pk-img %2820%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pk-img %283%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pk-img %284%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pk-img %285%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pk-img %286%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pt-img %2810%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pt-img %2811%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pt-img %2816%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pt-img %282%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pt-img %283%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pt-img %284%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pt-img %287%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\pt-img %288%29.png" />
+    <None Include="wwwroot\FileUpLoad\_thumbs\Images\th.jpg" />
+  </ItemGroup>
+
+</Project>

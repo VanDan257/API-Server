@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Trang chủ</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
+    
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body ng-app="app" ng-controller="ListBike">
+    <header id="header">
+        <!-- Topbar Start -->
+        <div class="header-top bg-gray-900 py-2">
+            <div class="container">
+                <div class="row py-2">
+                    <div class="col-lg-6 d-none d-lg-block">
+                        <div class="d-inline-flex align-items-center">
+                            <a class="text-light" href="">FAQs</a>
+                            <span class="text-muted px-2">|</span>
+                            <a class="text-light" href="">Help</a>
+                            <span class="text-muted px-2">|</span>
+                            <a class="text-light" href="">Support</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-right">
+                        <div class="d-inline-flex align-items-center">
+                            <a class="text-light px-2" href="">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="text-light px-2" href="">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="text-light px-2" href="">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a class="text-light px-2" href="">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a class="text-light pl-2" href="">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+    
+        <div class="header-inner py-4 bg-gray-900">
+            <div class="container">
+                <div class="row align-items-center py-3">
+                    <div class="col-lg-3 d-none d-lg-block">
+                        <a href="" class="text-decoration-none">
+                            <h2 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">CYCLE</span><span class="text-light">SHOP</span></h2>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-12 text-left search-inner">
+                        <form action="" class="w-100 position-relative">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search for products">
+                                <div class="input-group-append">
+                                    <span class="input-group-text bg-primary text-light">
+                                        <i class="fa fa-search"></i>
+                                    </span>
+                                </div>
+    
+                                <div class="search-history w-100 bg-light mt-2 rounded">
+                                    <h5 class="p-3">
+                                        Search history
+                                    </h5>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Cras justo odio</li>
+                                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                                        <li class="list-group-item">Morbi leo risus</li>
+                                        <li class="list-group-item">Porta ac consectetur ac</li>
+                                        <li class="list-group-item">Vestibulum at eros</li>
+                                      </ul>
+    
+                                    <a href="" class="btn text-center w-100 p-2 btn-show-all">All</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 col-12 d-flex align-items-center justify-content-lg-end justify-content-sm-between">
+                        <a href="" class="btn" style="font-size: 20px">
+                            <i class="fas fa-heart text-primary"></i>
+                            <span class="badge text-light">0</span>
+                        </a>
+                        <a href="" class="btn" style="font-size: 20px">
+                            <i class="fas fa-shopping-cart text-primary"></i>
+                            <span class="badge sum-cart text-light">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <!-- Navbar Start -->
+        <div class="header-nav bg-gray-900">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg bg-gray-900 navbar-light py-3 py-lg-0 px-0">
+                            <a href="" class="text-decoration-none d-block d-lg-none">
+                                <h2 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">WATCH</span>SHOP</h2>
+                            </a>
+                            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarCollapse">
+                                <div class="navbar-nav mr-auto py-0 w-100 d-flex justify-content-center">
+                                    <a href="TrangChu.html" class="nav-item nav-link position-relative text-uppercase mx-4">Home</a>
+                                    
+                                        <div class="mx-4 hero__categories">
+                                            <div class="hero__categories__all">
+                                                <a href="DanhMucSanPham.html" class="nav-item nav-link position-relative text-uppercase">
+                                                    <i class="fa fa-bars"></i>
+                                                    <span>Shop</span>
+                                                </a>
+                                            </div>
+                                            <ul style="display: none; background-color: #393939c5; left:30%" class="dropdown-menu">
+                                                <li ng-repeat="category in categories">
+                                                    <a class="nav-link nav-item" href="DanhMucSanPham.html?id={{ category.cateID }}">
+                                                        {{ category.cateName }}
+                                                    </a>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                    <a href="GioHang.html" class="nav-item nav-link position-relative text-uppercase  mx-4">Giỏ Hàng</a>
+                                    <a href="ThanhToan.html" class="nav-item nav-link position-relative text-uppercase  mx-4">Thanh Toán</a>
+                                    <a href="#" class="nav-item nav-link position-relative text-uppercase  mx-4">Tin Tức</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar End -->
+    </header>
+
+    <div class="slider-main bg-dark-200 mt-0 pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 p-0">
+                    <div id="header-slider" class="slick slide w-100">
+                        <div class="slider-inner position-relative">
+                            <div class="slider-item d-flex justify-content-between">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="p-3" style="max-width: 700px;">
+                                        <img src="https://i.graphicmama.com/blog/wp-content/uploads/2019/11/01141945/cycle.jpg" alt="">
+                                    </div>
+                                </div>
+                                <img class="img-fluid position-absolute" style="top: -48px; right: 48px;" src="img/luxury-watch-6c24a59ca8-removebg-preview.png" alt="Image">
+                            </div>
+    
+                            <div class="slider-item d-flex justify-content-between">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="p-3" style="max-width: 700px;">
+                                        <img src="https://i.graphicmama.com/blog/wp-content/uploads/2019/11/01141945/cycle.jpg" alt="">
+    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-item d-flex justify-content-between">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="p-3" style="max-width: 700px;">
+                                        <img src="https://i.graphicmama.com/blog/wp-content/uploads/2019/11/01141945/cycle.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
+                        
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offer Start -->
+    <div class="container offer pt-5">
+        <div class="row">
+            <div class="col-md-6 pb-4">
+                <div class="offer-item position-relative bg-dark-200 text-center text-md-right text-white mb-2 py-5 px-5">
+                    <img src="\FileUpLoad\images\demo1.jpg" alt="">
+                    <div class="position-relative" style="z-index: 1;">
+                        <h5 class="text-uppercase text-light mb-3">Dòng xe bán chạy nhất thị trường</h5>
+                        <h1 class="mb-4 text-light font-weight-semi-bold">ROAD</h1>
+                        <a href="" class="btn btn-outline-primary--light py-md-2 px-md-3">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 pb-4">
+                <div class="offer-item position-relative bg-dark-200 text-center text-md-left text-white mb-2 py-5 px-5">
+                    <img src="http://www.sintchristophorus.nl/wp-content/uploads/2019/01/Pilot-cycles-banner.jpg" height="100%" alt="">
+                    <div class="position-relative" style="z-index: 1;">
+                        <h5 class="text-uppercase text-light mb-3">20% off the all order</h5>
+                        <h1 class="mb-4 text-light font-weight-semi-bold">MODERN</h1>
+                        <a href="" class="btn btn-outline-primary--light py-md-2 px-md-3">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Offer End -->
+
+
+    <!-- Best Seller Products Start -->
+    <div class="container pt-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">BEST SELLER</span></h2>
+        </div>
+        <div class="row pb-3">
+            <div class="owl-carousel related-carousel">
+
+                    <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[0].proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{listSanPhamMoi[0].imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ listSanPhamMoi[0].title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ listSanPhamMoi[0].price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ listSanPhamMoi[0].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button"  ng-click="addToCart(listSanPhamMoi[0])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
+                    </div>
+                    <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[1].proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{listSanPhamMoi[1].imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ listSanPhamMoi[1].title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ listSanPhamMoi[1].price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ listSanPhamMoi[1].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button" ng-click="addToCart(listSanPhamMoi[1])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
+                    </div>
+                    <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[2].proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{listSanPhamMoi[2].imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ listSanPhamMoi[2].title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ listSanPhamMoi[2].price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ listSanPhamMoi[2].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button" ng-click="addToCart(listSanPhamMoi[2])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
+                    </div>
+                    <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[3].proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{listSanPhamMoi[3].imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ listSanPhamMoi[3].title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ listSanPhamMoi[3].price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ listSanPhamMoi[3].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button" ng-click="addToCart(listSanPhamMoi[3])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
+                    </div>
+                    <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[4].proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{listSanPhamMoi[4].imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ listSanPhamMoi[4].title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ listSanPhamMoi[4].price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ listSanPhamMoi[4].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button" ng-click="addToCart(listSanPhamMoi[4])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
+                    </div>
+                    <div class="card product-item border-0 mb-4" data-index="{{ listSanPhamMoi[4].proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{listSanPhamMoi[5].imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ listSanPhamMoi[5].title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ listSanPhamMoi[5].price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ listSanPhamMoi[5].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button" ng-click="addToCart(listSanPhamMoi[5])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Best Seller Products Start -->
+
+    <!-- Newest Products Start -->
+    <div class="container pt-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">NEWEST PRODUCT</span></h2>
+        </div>
+        <div class="row pb-3">
+            <div class="owl-carousel related-carousel">
+
+                <div class="card product-item border-0 mb-4" data-index="{{ newproducts[0].proID }}">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="product-thumbnail img-fluid w-100" src="{{newproducts[0].imagePath}}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="product-name text-truncate mb-3">{{ listSanPhamMoi[0].title }} </h6>
+                        <div class="d-flex justify-content-center">
+                            <h6 class="product-price">{{ newproducts[0].price | number }}₫</h6>
+                            <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="SanPham.html?id={{ newproducts[0].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a type="button" ng-click="addToCart(newproducts[0])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                    </div>
+                </div>
+                <div class="card product-item border-0 mb-4" data-index="{{ newproducts[1].proID }}">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="product-thumbnail img-fluid w-100" src="{{newproducts[1].imagePath}}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="product-name text-truncate mb-3">{{ newproducts[1].title }} </h6>
+                        <div class="d-flex justify-content-center">
+                            <h6 class="product-price">{{ newproducts[1].price | number }}₫</h6>
+                            <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="SanPham.html?id={{ newproducts[1].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a type="button" ng-click="addToCart(newproducts[1])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                    </div>
+                </div>
+                <div class="card product-item border-0 mb-4" data-index="{{ newproducts[2].proID }}">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="product-thumbnail img-fluid w-100" src="{{newproducts[2].imagePath}}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="product-name text-truncate mb-3">{{ newproducts[2].title }} </h6>
+                        <div class="d-flex justify-content-center">
+                            <h6 class="product-price">{{ newproducts[2].price | number }}₫</h6>
+                            <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="SanPham.html?id={{ newproducts[2].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a type="button" ng-click="addToCart(newproducts[1])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                    </div>
+                </div>
+                <div class="card product-item border-0 mb-4" data-index="{{ newproducts[3].proID }}">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="product-thumbnail img-fluid w-100" src="{{newproducts[3].imagePath}}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="product-name text-truncate mb-3">{{ newproducts[3].title }} </h6>
+                        <div class="d-flex justify-content-center">
+                            <h6 class="product-price">{{ newproducts[3].price | number }}₫</h6>
+                            <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="SanPham.html?id={{ newproducts[3].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a type="button" ng-click="addToCart(newproducts[1])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                    </div>
+                </div>
+                <div class="card product-item border-0 mb-4" data-index="{{ newproducts[4].proID }}">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="product-thumbnail img-fluid w-100" src="{{newproducts[4].imagePath}}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="product-name text-truncate mb-3">{{ newproducts[4].title }} </h6>
+                        <div class="d-flex justify-content-center">
+                            <h6 class="product-price">{{ newproducts[4].price | number }}₫</h6>
+                            <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="SanPham.html?id={{ newproducts[4].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a type="button" ng-click="addToCart(newproducts[4])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                    </div>
+                </div>
+                <div class="card product-item border-0 mb-4" data-index="{{ newproducts[4].proID }}">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="product-thumbnail img-fluid w-100" src="{{newproducts[5].imagePath}}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="product-name text-truncate mb-3">{{ newproducts[5].title }} </h6>
+                        <div class="d-flex justify-content-center">
+                            <h6 class="product-price">{{ newproducts[5].price | number }}₫</h6>
+                            <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="SanPham.html?id={{ newproducts[5].proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a type="button"  ng-click="addToCart(newproducts[5])" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                    </div>
+                </div>
+        </div>
+
+        </div>
+    </div>
+    <!-- Products End -->
+
+
+    <!-- Subscribe Start -->
+    <div class="subcribe bg-gray-900">
+        <div class="container my-5">
+            <div class="row justify-content-md-center py-5 ">
+                <div class="col-md-6 col-12 py-5">
+                    <div class="text-center mb-2 pb-2">
+                        <h2 class=" text-light px-5 mb-3">REGISTER</h2>
+                        <p class="text-light">Amet lorem at rebum amet dolores. Elitr lorem dolor sed amet diam labore at justo ipsum eirmod duo labore labore.</p>
+                    </div>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control border-white p-4" placeholder="Email...">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary px-4 text-light">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Subscribe End -->
+
+
+    <!-- Products Start -->
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-center mb-4">
+                    <h2 class="section-title px-5"><span class="px-2">Featured Product</span></h2>
+                </div>
+                <div class="featured__controls">
+                    <ul>
+                        <li class="active" class="active" data-filter="*">All</li>
+                        <li data-filter="."></li>
+                        <li data-filter=".xedap">Xe đạp</li>
+                        <li data-filter=".phutung">Phụ tùng</li>
+                        <li data-filter=".phukien">Phụ kiện</li>
+                        <li data-filter=".botruyendong">Bộ truyền động</li>
+                        <li data-filter=".khungsuon">Khung sườn</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row featured__filter">
+            <div ng-repeat="xedap in xedapbycategories.data" class="col-lg-3 col-md-4 col-sm-6 mix xedap">
+                <div class="featured__item">
+                    <div class="card product-item border-0 mb-4" data-index="{{ xedap.proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{xedap.imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ xedap.title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ xedap.price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ xedap.proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button"  ng-click="addToCart(xedap)" class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-repeat="phutung in phutungbycategories.data" class="col-lg-3 col-md-4 col-sm-6 mix phutung">
+                <div class="featured__item">
+                    <div class="card product-item border-0 mb-4" data-index="{{ phutung.proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{phutung.imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ phutung.title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ phutung.price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ phutung.proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button" ng-click="addToCart(phutung)"  class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-repeat="phukien in phukienbycategories.data" class="col-lg-3 col-md-4 col-sm-6 mix phukien">
+                <div class="featured__item">
+                    <div class="card product-item border-0 mb-4" data-index="{{ phukien.proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{phukien.imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ phukien.title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ phukien.price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ phukien.proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button" ng-click="addToCart(phukien)"  class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-repeat="botruyendong in botruyendongbycategories.data" class="col-lg-3 col-md-4 col-sm-6 mix botruyendong">
+                <div class="featured__item">
+                    <div class="card product-item border-0 mb-4" data-index="{{ botruyendong.proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{botruyendong.imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ botruyendong.title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ botruyendong.price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ botruyendong.proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button" ng-click="addToCart(botruyendong)"  class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-repeat="khungsuon in khungsuonbycategories.data" class="col-lg-3 col-md-4 col-sm-6 mix khungsuon">
+                <div class="featured__item">
+                    <div class="card product-item border-0 mb-4" data-index="{{ khungsuon.proID }}">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="product-thumbnail img-fluid w-100" src="{{khungsuon.imagePath}}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="product-name text-truncate mb-3">{{ khungsuon.title }} </h6>
+                            <div class="d-flex justify-content-center">
+                                <h6 class="product-price">{{ khungsuon.price | number }}₫</h6>
+                                <!-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> -->
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="SanPham.html?id={{ khungsuon.proID }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a type="button" ng-click="addToCart(khungsuon)"  class="btn btn-sm btn-add-cart text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Products End -->
+
+
+    <!-- Vendor Start -->
+    <div class="container py-5">
+        <div class="row ">
+            <div class="col">
+                <div class="owl-carousel vendor-carousel">
+                    <div class="vendor-item border p-4">
+                        <img src="img/vendor-1.jpg" alt="">
+                    </div>
+                    <div class="vendor-item border p-4">
+                        <img src="img/vendor-2.jpg" alt="">
+                    </div>
+                    <div class="vendor-item border p-4">
+                        <img src="img/vendor-3.jpg" alt="">
+                    </div>
+                    <div class="vendor-item border p-4">
+                        <img src="img/vendor-4.jpg" alt="">
+                    </div>
+                    <div class="vendor-item border p-4">
+                        <img src="img/vendor-5.jpg" alt="">
+                    </div>
+                    <div class="vendor-item border p-4">
+                        <img src="img/vendor-6.jpg" alt="">
+                    </div>
+                    <div class="vendor-item border p-4">
+                        <img src="img/vendor-7.jpg" alt="">
+                    </div>
+                    <div class="vendor-item border p-4">
+                        <img src="img/vendor-8.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor End -->
+
+
+    <!-- Footer Start -->
+    <div class="footer bg-gray-900">
+        <div class="container text-light mt-5 pt-5">
+            <div class="row  pt-5">
+                <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                    <a href="" class="text-decoration-none">
+                        <h2 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">CYCLE</span><span class="text-light">SHOP</span></h2>
+                    </a>
+                    <p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum dolore amet erat.</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-light mr-3"></i>Đình Dù - Văn Lâm - Hưng Yên</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-light mr-3"></i>vandan250702@gmail.com</p>
+                    <p class="mb-0"><i class="fa fa-phone-alt text-light mr-3"></i>+84 343 6286 48</p>
+                </div>
+                <div class="col-lg-8 col-md-12">
+                    <div class="row">
+                        <div class="col-md-5 mb-5">
+                            <h5 class="font-weight-bold text-light mb-4">Quick Links</h5>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="TrangChu.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                                <a class="text-light mb-2" href="DanhMucSanPham.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                                <a class="text-light mb-2" href="GioHang.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                                <a class="text-light mb-2" href="ThanhToan.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                                <a class="text-light" href="DichVuBanHang.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                            </div>
+                        </div>
+                        <div class="col-md-7 mb-5">
+                            <h5 class="font-weight-bold text-light mb-4">Newsletter</h5>
+                            <form action="">
+                                <div class="form-group">
+                                    <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
+                                        required="required" />
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Subscribe Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <div class="toast-message">
+        <p class="text-light p-3">Sản phẩm đã được thêm vào giỏ hàng</p>
+    </div>
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.js"></script>
+    <script src="http://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script src="js/mixitup.min.js"></script> 
+
+    <!-- Thêm vào giỏ hàng -->
+    <script>
+        function addToCart(item) {
+            item.quantity = 1;
+            var list;
+            if (localStorage.getItem('cart') == null) {
+                list = [item];
+            } else {
+                list = JSON.parse(localStorage.getItem('cart')) || [];
+                let ok = true;
+                for (let x of list) {
+                    if (x.proID == item.proID) {
+                        x.quantity += 1;
+                        ok = false;
+                        break;
+                    }
+                }
+                if (ok) {
+                    list.push(item);
+                }
+            }
+
+            let toastMessage = document.querySelector('.toast-message');
+
+            toastMessage.style.display = 'block';
+
+                item.innerHTML = 
+                    `<div class="spinner-border spinner-border-sm" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>`;
+
+                
+
+                setTimeout(() => {
+                    toastMessage.style.display = 'none';
+                    item.innerHTML = `Show cart <i class="fa-solid fa-arrow-right ml-1"></i>`;
+                    item.classList.remove('btn-add-cart');
+                    item.setAttribute('href', './GioHang.html');
+                }, 1000)
+
+            localStorage.setItem('cart', JSON.stringify(list));
+        }
+    </script>
+
+    <!-- Angularjs -->
+    <script src="/angular/angular.min.js"></script>
+    <script src="/angular/global.js"></script>
+    <script src="/angular/home.js"></script>
+
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Đăng nhập</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/Assets/Login/css/style.css?v=3.4.1">
+
+</head>
+<body class="img js-fullheight" style="background-image: url(/Assets/Login/images/bg.jpg);">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Đăng nhập trang quản trị</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        <h3 class="mb-4 text-center">Have an account?</h3>
+                            <div class="form-group">
+                                <input type="text" id="UserName" class="form-control" placeholder="Username">                    
+                                    </div>
+                            <div class="form-group">
+                                <input type="text" id="Password" class="form-control" placeholder="Password">
+                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" onclick="Login()" class="form-control btn btn-primary submit px-3">Sign In</button>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-50">
+                                    <label class="checkbox-wrap checkbox-primary">
+                                        <input type="checkbox" ng-model="RememberMe" name="" id="">Remember Me
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="w-50 text-md-right">
+                                    <a href="#" style="color: #fff">Forgot Password</a>
+                                </div>
+                            </div>
+                        <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
+                        <div class="social d-flex text-center">
+                            <a href="#" class="btn-fb px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
+                            <a href="#" class="btb-tw px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/jquery-3.6.1.min.js"></script>
+
+    <script> 
+        function Login() {
+            var item = {};
+            item.UserName = $("#UserName").val();
+            item.Password = $("#Password").val();
+            $.ajax({
+                type: "POST",
+                url: "https://localhost:7059/api/User/login",
+                dataType: "json",
+                contentType: 'application/json',
+                data: JSON.stringify(item)
+            }).done(function (data) {
+                if (data != null && data.message != null && data.message != 'undefined') {
+                    alert(data.message);
+                } else {
+                    localStorage.setItem("user", JSON.stringify(data));
+                    window.location.href = "dashboard.html";
+                }
+               
+            }) .fail(function() {
+              alert('Có lỗi');
+            }); 
+        };
+    </script>
+
+
+</body>
+</html>
