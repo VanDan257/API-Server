@@ -41,6 +41,10 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="/Assets/css/soft-ui-dashboard.css?v=3.4.2" rel="stylesheet" />
 
+    <script src="/angular/angular.min.js"></script>
+    <script src="/admin/angular/global.js"></script>
+    <script src="/admin/angular/home.js"></script>
+
 </head>
 
 <body id="page-top" ng-app="XeDap">
@@ -721,7 +725,11 @@
 
                 $http({
                     method: 'GET', 
-                    url: 'https://localhost:7059/api/Products/get-img-by-imgid?ImgID='+ value,
+                    headers: {
+                        "Authorization": 'Bearer ' + _user.token,
+                        // 'Content-Type': undefined
+                    },
+                    url: current_url + '/api-admin/Products/get-img-by-imgid?ImgID='+ value,
                 }).then(function (response) { 
                     console.log(response.data);
                     image = response.data;
@@ -742,9 +750,7 @@
                 $scope.image.imgID = value;
                 $scope.image.imageFile =imageFile;
 
-                console.log($scope.image);
-
-                $http.post("/api/Products/update-image/", $scope.image).then(function (result) {
+                $http.post(current_url + "/api-admin/Products/update-image/", $scope.image).then(function (result) {
                     $window.location.href = 'admin/products/index';
                 }, function (error) {
                     alert("Thêm không thành công")

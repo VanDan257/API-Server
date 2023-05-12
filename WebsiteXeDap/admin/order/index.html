@@ -268,7 +268,18 @@
                                         {{ order.note}}
                                     </td>
                                     <td>
-                                        {{ order.status}}
+                                        <!-- {{ order.paid }} -->
+                                        <p ng-if="order.status==='0'">Chờ xác nhận
+                                        </p>
+                                        <p ng-if="order.status==='1'">Đã xác nhận 
+                                        </p>
+                                        <p ng-if="order.status==='2'">Đang giao 
+                                        </p>
+                                        <p ng-if="order.status==='3'">Giao hàng thành công</p>
+                                        <p ng-if="(order.paid)">, Đã thanh toán</p>
+                                        <!-- <p ng-else>
+                                            {{ order.status}}
+                                        </p> -->
                                     </td>
                                     <td>
                                         {{ order.totalPay  | number}}₫
@@ -609,10 +620,14 @@
             // $scope.listCategory;
             $scope.LoadListBike = function () {		 
                 $http({
-                    method: 'GET', 
-                    url: 'https://localhost:7059/api/Order/getall',
+                    method: 'GET',
+                    headers: {
+                        "Authorization": 'Bearer ' + _user.token,
+                        'Content-Type': undefined
+                    },
+                    url: current_url + '/api-admin/Order/getall',
                 }).then(function (response) {
-                    // console.log(response.data);
+                    console.log(response.data);
                     $scope.orders = response.data;
                     makeScript('js/main.js')
                 });

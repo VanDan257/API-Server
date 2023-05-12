@@ -21,6 +21,7 @@ namespace WebsiteXeDapAPI_WebApp.Controllers
             _productBusiness = productBusiness;
         }
 
+        //[Authorize]
         [Route("GetAll")]
         [HttpGet]
         public async Task<List<ProductVM>> GetAll()

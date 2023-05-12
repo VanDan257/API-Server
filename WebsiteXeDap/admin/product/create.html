@@ -124,7 +124,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  " href="/Admin/Orders/Index">
+                    <a class="nav-link  " href="/admin/order/index.html">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="fa-solid fa-file-invoice"></i>
                         </div>
@@ -819,7 +819,11 @@
             $scope.LoadlistCategory = function (){
                 $http({
                     method: 'GET', 
-                    url: 'https://localhost:7059/api/Categories/get-all-parent-categories',
+                    headers: {
+                        "Authorization": 'Bearer ' + _user.token,
+                        'Content-Type': undefined
+                    },
+                    url: current_url + '/api-admin/Categories/get-all-parent-categories',
                 }).then(function (response) {
                     $scope.tendm = response.data;
                     makeScript('js/main.js')
@@ -867,14 +871,22 @@
                         'Content-Type': undefined
                     },
                     data: formData,
-                    url: 'https://localhost:7059/api/Products/upload',
+                    headers: {
+                        "Authorization": 'Bearer ' + _user.token,
+                        'Content-Type': undefined
+                    },
+                    url: current_url + '/api-admin/Products/upload',
                 }).then(function(response) {
                     product.image = response.data.filePath;
                     console.log(product);
                     $http({
                         method: 'POST', 
                         data: product, 
-                        url: 'https://localhost:7059/api/Products/create-product',
+                        headers: {
+                            "Authorization": 'Bearer ' + _user.token,
+                            // 'Content-Type': application/json
+                        },
+                        url: current_url + '/api-admin/Products/create-product',
                     }).then(function (response) {	
                         $window.location.href = '../product/index.html';
                     }, function (error) {

@@ -1,0 +1,103 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:9116"
+  },
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/api-nguoidung/Product/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "DownstreamPathTemplate": "/api/Product/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 19071
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api-nguoidung/Categories/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "DownstreamPathTemplate": "/api/Categories/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 19071
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api-nguoidung/Order/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "DownstreamPathTemplate": "/api/Order/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 19071
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api-admin/Categories/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/api/Categories/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 13763
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api-admin/Products/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/api/Products/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 13763
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api-admin/Order/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "DownstreamPathTemplate": "/api/Order/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 13763
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api-admin/User/login",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "DownstreamPathTemplate": "/api/User/login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 13763
+        }
+      ]
+    }
+  ]
+}

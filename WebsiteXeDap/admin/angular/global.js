@@ -1,4 +1,5 @@
-var current_url = "https://localhost:7059";
+var current_url = "https://localhost:44312";
+var _user = JSON.parse(localStorage.getItem("user"));
 makeScript = function (url) {
 	var script = document.createElement('script');
 	script.setAttribute('src', url);

@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" href="/Assets/Login/css/style.css?v=3.4.1">
 
+    <script src="/admin/angular/global.js"></script>
+
 </head>
 <body class="img js-fullheight" style="background-image: url(/Assets/Login/images/bg.jpg);">
     <section class="ftco-section">
@@ -65,7 +67,8 @@
             item.Password = $("#Password").val();
             $.ajax({
                 type: "POST",
-                url: "https://localhost:7059/api/User/login",
+                url: current_url + "/api-admin/User/login",
+                processData: false,
                 dataType: "json",
                 contentType: 'application/json',
                 data: JSON.stringify(item)

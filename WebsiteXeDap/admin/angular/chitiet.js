@@ -6,7 +6,7 @@ app.controller("Product", function ($scope, $http) {
 
         $http({
             method: 'GET', 
-            url: current_url + '/api/Products/get-by-id?ProID='+ value,
+            url: current_url + '/api-admin/Products/get-by-id?ProID='+ value,
         }).then(function (response) { 
             console.log(response.data);
             $scope.product = response.data;
@@ -21,7 +21,7 @@ app.controller("Product", function ($scope, $http) {
 
         $http({
             method: 'GET', 
-            url: current_url + '/api/Products/getlistimgbyproid?proId='+ value,
+            url: current_url + '/api-admin/Products/getlistimgbyproid?proId='+ value,
         }).then(function (response) { 
             
             $scope.images = response.data;
@@ -33,7 +33,7 @@ app.controller("Product", function ($scope, $http) {
     $scope.LoadlistCategory = function (){
         $http({
             method: 'GET', 
-            url: current_url + '/api/Categories/get-all-parent-categories',
+            url: current_url + '/api-admin/Categories/get-all-parent-categories',
         }).then(function (response) {
             console.log(response.data);
             $scope.tendm = response.data;

@@ -390,7 +390,7 @@
                                         {{product.title}}
                                     </td>
                                     <td>
-                                        {{product.cateID}}
+                                        {{product.cateName}}
                                     </td>
                                     <td>
                                         {{product.price | number}}₫
@@ -731,17 +731,14 @@
             $scope.LoadListBike = function () {		 
                 $http({
                     method: 'GET', 
-                    url: 'https://localhost:7059/api/Products/GetAll',
+                    headers: {
+                        "Authorization": 'Bearer ' + _user.token,
+                        'Content-Type': undefined
+                    },
+                    url: current_url + '/api-admin/Products/GetAll',
                 }).then(function (response) {
                     
                     $scope.products = response.data;
-                    // $http({
-                    //     method: 'GET', 
-                    //     url: 'https://localhost:7059/api/Categories/GetByID?CateID'+response.data.cateID,
-                    // }).then(function (response) {           
-                    //     $scope.CateName = response.data;
-                    //     console.log($scope.CateName);
-                    // });
                     makeScript('js/main.js')
                 });
             };  

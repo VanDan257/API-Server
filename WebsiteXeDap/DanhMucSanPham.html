@@ -107,7 +107,7 @@
                             <i class="fas fa-heart text-primary"></i>
                             <span class="badge text-light">0</span>
                         </a>
-                        <a href="" class="btn" style="font-size: 20px">
+                        <a href="GioHang.html" class="btn" style="font-size: 20px">
                             <i class="fas fa-shopping-cart text-primary"></i>
                             <span class="badge sum-cart text-light">0</span>
                         </a>
@@ -135,7 +135,7 @@
                                     
                                         <div class="mx-4 hero__categories">
                                             <div class="hero__categories__all">
-                                                <a href="DanhMucSanPham.html" class="nav-item nav-link position-relative text-uppercase">
+                                                <a href="DanhMucSanPham.html" class="nav-item nav-link position-relative text-uppercase active">
                                                     <i class="fa fa-bars"></i>
                                                     <span>Shop</span>
                                                 </a>
@@ -150,7 +150,7 @@
                                             </ul>
                                         </div>
                                     <a href="GioHang.html" class="nav-item nav-link position-relative text-uppercase  mx-4">Giỏ Hàng</a>
-                                    <a href="ThanhToan.html" class="nav-item nav-link position-relative text-uppercase  mx-4">Thanh Toán</a>
+                                    <a href="#" class="nav-item nav-link position-relative text-uppercase  mx-4">Giới thiệu</a>
                                     <a href="#" class="nav-item nav-link position-relative text-uppercase  mx-4">Tin Tức</a>
                                 </div>
                             </div>
@@ -187,8 +187,8 @@
                     <h5 class="font-weight-semi-bold mb-4">Filter by price</h5>
                     <form>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" checked id="price-all">
-                            <label class="custom-control-label" for="price-all">All Price</label>
+                            <!-- <input type="checkbox" class="custom-control-input" checked id="price-all"> -->
+                            <div class="text-gradient" for="price-all">Products</div>
                             <span class="badge border font-weight-normal">{{ spsearch.totalItems }}</span>
                         </div>
                         <hr>
@@ -200,7 +200,9 @@
                                 <label class="col-md-2" for="toPrice">Đến</label>
                                 <input class="col-md-3" style="padding: 0 4px;" type="text" ng-model="toPrice" id="toPrice">₫
                             </div>
-                            <button ng-click="Search()" class="btn btn-block">Tìm kiếm</button>
+                            <div style="display: flex; justify-content: center; margin-top: 12px;">
+                                <button ng-click="Search()" class="btn btn-dark">Tìm kiếm</button>
+                            </div>
                         </form>
                         <!-- <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="price-1">

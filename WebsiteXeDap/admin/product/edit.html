@@ -43,7 +43,8 @@
     <link rel="stylesheet" href="../css/productcreate.css">
 
     <script src="/angular/angular.min.js"></script>
-    <script src="../angular/home.js"></script>
+    <script src="/admin/angular/home.js"></script>
+    <script src="/admin/angular/global.js"></script>
 
 </head>
 
@@ -123,7 +124,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  " href="/Admin/Orders/Index">
+                    <a class="nav-link  " href="/admin/order/index.html">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="fa-solid fa-file-invoice"></i>
                         </div>
@@ -371,16 +372,24 @@
 
                     <div class="row">
                         <div class="col-md-6">
+                            <div  class="form-group" style="margin-left: 12px;">
+                                <div ng-repeat="specification in product.listjson_specifications" style="cursor: pointer;">
+                                    <label class="control-label">{{ specification.speName }}:</label>
+                                    <div class="col-md-10">
+                                        <input type="text" value="{{ specification.description }}" ng-model="specification.description" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="form-group" style="margin-left: 12px;">
-                                <button class="btn btn-info pop-up_specification"><span>Sửa thuộc tính sản phẩm</span></button>
+                                <button class="btn btn-info pop-up_specification"><span>Thêm thuộc tính sản phẩm</span></button>
                             </div>
                               
-                            
+                        </div>
+                        <div class="col-md-6">
                             <div class="form-group" style="margin-left: 12px;">
                                 <a href="./listimageproduct.html?id={{ product.proID }}" class="btn btn-outline-secondary"><span>Sửa ảnh sản phẩm</span></a>
                             </div>
-                        </div>
-                        <div class="col-md-6">
                             
                             <div class="form-group" style="margin-left: 12px;">
                                 <button class="btn btn-reddit pop-up_price"><span>Cập nhật giá</span></button>
@@ -405,7 +414,7 @@
                             <span class="close">close</span>
                             
                             <div class="title">
-                                <h1>Cập nhật thuộc tính sản phẩm</h1>
+                                <h1>Thêm thuộc tính sản phẩm</h1>
                             </div>
                             <div class="subscribe">
                             
@@ -508,12 +517,7 @@
                         </div>
                     </div>
 
-                    <div  class="form-group" style="margin-left: 12px;">
-                        <div ng-repeat="thuoctinh in listjson_specifications" style="cursor: pointer;">
-                            {{ thuoctinh.speName }}:
-                            {{ thuoctinh.description }}
-                        </div>
-                    </div>
+                    
             
             
                     <div class="form-group">
@@ -862,27 +866,50 @@
             $scope.LoadlistCategory = function (){
                 $http({
                     method: 'GET', 
-                    url: 'https://localhost:7059/api/Categories/get-all-parent-categories',
+                    headers: {
+                        "Authorization": 'Bearer ' + _user.token,
+                        'Content-Type': undefined
+                    },  
+                    url: current_url + '/api-admin/Categories/get-all-parent-categories',
                 }).then(function (response) {
                     $scope.tendm = response.data;
                 });
             }
             $scope.LoadlistCategory();
 
+            $scope.listjson_specifications =  [];
+            
+            $scope.addSpecification = function (){
+                let specification = {};
+                specification.speName = $scope.speName; 
+                specification.description = $scope.description; 
+                $scope.listjson_specifications.push(specification);
+                $scope.speName = "";
+                $scope.description = "";
+
+            }
+
+            $scope.InputAttribute = function(attribute){
+                $scope.speName = attribute.speName;
+                $scope.description = attribute.description;
+            }
             
             $scope.LoadSanPhambyID = function () { 
                 var key = 'id';
                 var value = window.location.search.substring(window.location.search.indexOf(key)+key.length+1);	
                 $http({
                     method: 'GET', 
-                    url: 'https://localhost:7059/api/Products/get-by-id/'+ value,
+                    headers: {
+                        "Authorization": 'Bearer ' + _user.token,
+                    },
+                    url: current_url + '/api-admin/Products/get-by-id/'+ value,
                 }).then(function (response) { 
                     $scope.product = response.data;
                     $scope.title = response.data.title;
                     $scope.cateID = response.data.cateID;
                     $scope.price = response.data.price;
                     $scope.desscription = response.data.desscription;
-                    console.log($scope.product);
+                    // console.log($scope.product);
                 });
             }
             $scope.LoadSanPhambyID();
@@ -896,23 +923,28 @@
             $scope.Update = Update;
             function Update() {
 
+                // product.listjson_specifications = $scope.listjson_specifications
+
                 product.proID = value;
                 product.title = $scope.title;
                 product.cateID = $scope.cateID;
                 product.price = $scope.price;
                 product.desscription = CKEDITOR.instances['txtContent'].getData();
 
-                console.log(product)
+                console.log(product);
 
-                $http({
-                    method: 'POST', 
-                    data: product, 
-                    url: 'https://localhost:7059/api/Products/update-product',
-                }).then(function (response) {	
-                        $window.location.href = '../product/index.html';
-                }, function (error) {
-                        alert("Thêm không thành công")
-                });
+                // $http({
+                //     method: 'POST', 
+                //     data: product, 
+                //     headers: {
+                //         "Authorization": 'Bearer ' + _user.token,
+                //     },
+                //     url: current_url + '/api-admin/Products/update-product',
+                // }).then(function (response) {	
+                //         $window.location.href = '../product/index.html';
+                // }, function (error) {
+                //         alert("Thêm không thành công")
+                // });
 
             }
 
@@ -932,11 +964,13 @@
                 price.price = $scope.newPrice;
                 price.endDate = formattedDate;
                 // price = JSON.stringify(price);
-                console.log(price);
                 $http({
                     method: 'POST', 
                     data: price, 
-                    url: 'https://localhost:7059/api/Products/update-price',
+                    headers: {
+                        "Authorization": 'Bearer ' + _user.token,
+                    },
+                    url: current_url + '/api-admin/Products/update-price',
                 }).then(function (response) {	
                         alert('Cập nhật giá thành công');
                 }, function (error) {
@@ -955,7 +989,10 @@
                 $http({
                     method: 'POST', 
                     data: promotion, 
-                    url: 'https://localhost:7059/api/Products/create-promotion',
+                    headers: {
+                        "Authorization": 'Bearer ' + _user.token,
+                    },
+                    url: current_url + '/api-admin/Products/create-promotion',
                 }).then(function (response) {	
                         alert('Thêm chương trình khuyến mãi thành công');
                 }, function (error) {

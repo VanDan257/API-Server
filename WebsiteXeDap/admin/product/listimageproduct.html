@@ -41,12 +41,16 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="/Assets/css/soft-ui-dashboard.css?v=3.4.2" rel="stylesheet" />
 
+    <script src="/angular/angular.min.js"></script>
+    <script src="/admin/angular/global.js"></script>
+	<script src="/admin/angular/home.js"></script>
+
 </head>
 
 <body id="page-top" ng-app="XeDap" ng-controller="Image">
 
    <!-- Sidebar -->
-    <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
+   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header pt-3">
         <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
         <div class="col-lg-3 d-none d-lg-block">
@@ -119,7 +123,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " href="/Admin/Orders/Index">
+                <a class="nav-link  " href="/admin/order/index.html">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="fa-solid fa-file-invoice"></i>
                     </div>
@@ -202,7 +206,7 @@
             </li>
         </ul>
     </div>
-    </aside>
+</aside>
 
     <!-- End of Sidebar -->
     <!-- Page Wrapper -->
@@ -707,7 +711,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="/Assets/Admin/js/sb-admin-2.js"></script>
-    <script src="/angular/angular.min.js"></script>
 
     <script>
         var app = angular.module('XeDap', []);
@@ -718,7 +721,11 @@
 
             $http({
                 method: 'GET', 
-                url: 'https://localhost:7059/api/Products/getlistimgbyproid?proId='+ value,
+                headers: {
+                    "Authorization": 'Bearer ' + _user.token,
+                    'Content-Type': undefined
+                },
+                url: current_url + '/api-admin/Products/getlistimgbyproid?proId='+ value,
             }).then(function (response) { 
                 console.log(response.data);
                 $scope.images = response.data;
@@ -733,7 +740,11 @@
             if(confirm){
                 $http({
                     method: 'DELETE', 
-                    url: 'https://localhost:7059/api/Products/delete-image?imgID='+ imgID,
+                    headers: {
+                        "Authorization": 'Bearer ' + _user.token,
+                        'Content-Type': undefined
+                    },
+                    url: current_url + '/api-admin/Products/delete-image?imgID='+ imgID,
                 }).then(function (response) { 
                     $window.location.reload();
                     makeScript('js/main.js')

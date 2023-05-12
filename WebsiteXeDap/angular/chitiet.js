@@ -7,7 +7,7 @@ app.controller("ChitietCtrl", function ($scope, $http, $window) {
 
         $http({
             method: 'GET', 
-            url: current_url + '/api/Product/get-by-id/'+ value,
+            url: current_url + '/api-nguoidung/Product/get-by-id/'+ value,
         }).then(function (response) { 
             $scope.sanpham = response.data;
 
@@ -15,7 +15,7 @@ app.controller("ChitietCtrl", function ($scope, $http, $window) {
             search.page = 1;
             search.pageSize = 6;
             search.CateID = $scope.sanpham.cateID
-            $http.post(current_url + '/api/Product/search', search).then(function (response) {
+            $http.post(current_url + '/api-nguoidung/Product/search', search).then(function (response) {
                 $scope.spsearch = response.data;
                 makeScript('js/main.js')
             });
@@ -31,7 +31,7 @@ app.controller("ChitietCtrl", function ($scope, $http, $window) {
 
         $http({
             method: 'GET', 
-            url: current_url + '/api/Product/getlistimgbyproid?proId='+ value,
+            url: current_url + '/api-nguoidung/Product/getlistimgbyproid?proId='+ value,
         }).then(function (response) { 
             $scope.images = response.data;
 			makeScript('js/main.js')
@@ -45,7 +45,7 @@ app.controller("ChitietCtrl", function ($scope, $http, $window) {
 
         $http({
             method: 'GET', 
-            url: current_url + '/api/Product/getlistspecificationsbyproid?proId='+ value,
+            url: current_url + '/api-nguoidung/Product/getlistspecificationsbyproid?proId='+ value,
         }).then(function (response) { 
             // console.log(response.data);
             $scope.specifications = response.data;
@@ -57,26 +57,13 @@ app.controller("ChitietCtrl", function ($scope, $http, $window) {
     $scope.LoadlistCategory = function (){
         $http({
             method: 'GET', 
-            url: current_url + '/api/Categories/get-all-parent-categories',
+            url: current_url + '/api-nguoidung/Categories/get-all-parent-categories',
         }).then(function (response) {
             $scope.categories = response.data;
 			makeScript('js/main.js')
         });
     }
     $scope.LoadlistCategory();
-
-    // $scope.Search = function(){
-    //     let search = {};
-    //     search.page = 1;
-    //     search.pageSize = 6;
-    //     search.CateID = value
-    //     $http.post(current_url + '/api/Product/search', search).then(function (response) {
-    //         $scope.spsearch = response.data;
-    //         makeScript('js/main.js')
-    //     });
-    // }
-
-    // $scope.Search();
 
     $scope.addToCart= function(product){
         $window.addToCart(product);
